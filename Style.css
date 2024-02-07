@@ -1,0 +1,312 @@
+:root {
+    --blanco: #ffffff;
+    --rosado: #b83165;
+    --negro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --violeta: #1b0b17;
+    --grisClaro: #dfe9f3;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory; /*scroll de arriba hacia abajo*/
+}
+.servicios,
+.navegacion-principal,
+.formulario {
+    scroll-behavior: center;
+    
+}
+
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);     /*de abajo hacia arriba, 1er color, ultimo color*/
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+
+h2 {
+    font-size: 3.8rem;
+
+}
+
+h3 {
+    font-size: 2.8rem;
+}
+
+h5 {
+    color: var(--blanco);
+    font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+
+}
+
+p {
+    font-size: 1.8;
+    color: var(--violeta);
+    font-weight: bold;
+
+}
+
+.titulo {
+    color: var(--rosado);
+    font-weight: bold;
+}
+
+.subtitulo {
+    color: var(--blanco);
+    font-weight: bold;
+
+}
+
+.premisa {
+    color: var(--blanco);
+    text-align: center;
+    font-weight: bold;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+}
+
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1.5rem 4rem;     /*arriba y abajo y derecha e izquierda*/
+    margin-top: 1rem;     /*creando espacio entre una linea y la otra*/
+    font-size: 2rem;
+    text-decoration: none;     /*sin subrayado*/
+    text-transform: uppercase;     /*mayusculas y aplicará para todos los botones del proyecto*/
+    font-weight: bold;
+    border-radius: .5rem;     /*esquinas redondeadas*/
+    width: 90%;     /*tamaño del botón al reducir la pantalla*/
+    text-align: center;
+    border: none;
+}
+
+@media (min-width: 768px) {     /*para que se adapte a las diferentes pantallas*/
+    .boton {
+        width: auto;
+        height: auto;
+    }
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+.sombra {
+    box-shadow: 12px 15px 5px 0px rgba(128, 125, 128, 0.43);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.w-sm-100 {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .w-sm-100 {
+        width: auto;
+    }
+}
+
+.flex {
+   display: flex;
+}
+
+.alinear-derecha {
+   justify-content: flex-end;
+}
+
+.nav-bg {
+    background-color: var(--secundario);
+}
+
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+
+    /*atajo mq*/
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navegacion-principal a {
+    color: var(--rosado);
+    text-decoration: none;
+    font-size: larger;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.navegacion-principal a:hover {
+    background-color: var(--primario);
+    color: var(--negro);
+}
+
+.hero {
+    background-image: url("../img/acuerdo comercial.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 320px;
+    /*altura imagen*/
+    position: relative;
+    margin-bottom: 2rem;
+
+
+}
+
+.contenido-hero {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .5);     /*transparencia en imagen*/
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    content: center;
+    color: var(--blanco);
+    font: bold;
+    justify-content: center;
+    line-height: 2px;
+
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+.ubicacion {
+    display: flex;
+    align-items: end;
+}
+
+
+
+/** servicios **/
+
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 5rem;
+    }
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.servicio h3 {
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.servicio p {
+    line-height: 2;
+    text-align: center;
+}
+
+.servicio .iconos {     /*caracteristicas de los circulos de servicios*/
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;     /*uno frente a otro*/
+    justify-content: center;     /*centrar contenido*/
+    align-items: center;     /*alineacion vertical*/
+}
+
+/*contacto*/
+
+.formulario {
+background-color: var(--grisClaro);
+width: min(60rem, 100%); /**utilizar el valor ms quequeño**/
+margin: 0 auto;
+padding: 2rem;
+border-radius: 2rem;
+}
+.formulario fieldset {
+  border: none;
+}
+
+.formulario legend {
+    text-align: center; /*alineacion texto*/
+    font-size: 1.8rem; /*tamaño letra*/
+    text-transform: uppercase; /*mayusculas*/
+    font-weight: 700; /*negrita*/
+    margin-bottom: 2rem; /*espacios entre titulo y campos a completar*/
+    color: var(--rosado);
+ }
+@media (min-width: 768px) {
+ .contenedor-campos {
+   display: grid;
+ }
+}
+ .campo {
+   margin-bottom: 1rem;
+ }
+
+ .campo label {
+   color: var(--violeta);
+   font-weight: bold;
+   margin-bottom: .5rem;
+   display: block;
+ }
+
+ .campo textarea {
+   height: 20rem;
+   width: 100%;
+   
+ }
+
+ .input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+ }
+
+ .enviar.boton {
+    width: 100%;
+ }
+
+ ul {
+   font-weight: bold;
+   color: var(--violeta);
+   text-align: justify;
+ }
+
+ .footer {
+    text-align: center;
+ }
